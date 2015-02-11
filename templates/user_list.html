@@ -1,8 +1,11 @@
 <DOCTYPE! html>
 <html>
 
-{% for user in users %}
-<h2>User {{ user.id }}, age {{ user.age }} has {{ user.ratings|length }} ratings</h2>
+{% for user in user_list %}
+{% for rating in rating_list %}
+{% for movie in movie_list %}
+    <h2>  <h2>
+
 {% endfor %}
 
 </html>

@@ -56,5 +56,5 @@ def main(session):
 
 
 if __name__ == "__main__":
-    s= model.connect()
-    main(s)
+    session = model.session
+

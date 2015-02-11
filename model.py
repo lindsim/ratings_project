@@ -22,10 +22,12 @@ class User(Base):
         """Show info about itself instead of memory location."""
         return "<User id=%d, email=%s, password=%s, age=%d, zipcode=%s>" %(self.id, self.email, self.password, self.age, self.zipcode)
 
+
 class Movie(Base):
     __tablename__ = "movies"
     id = Column(Integer, primary_key = True)
     name = Column(String(64))
+    
     release_date = Column(DateTime)
     imdb_url = Column(String(64))
 
@@ -37,11 +39,12 @@ class Rating(Base):
     __tablename__ = "ratings"
     
     id = Column(Integer, primary_key = True)
-    movie_id = Column(Integer)
+    movie_id = Column(Integer, ForeignKey('movies.id'))
     user_id = Column(Integer, ForeignKey('users.id'))
     rating = Column(Integer)
 
     user = relationship("User", backref=backref ("ratings", order_by=id))
+    movie = relationship("Movie", backref=backref ("ratings", order_by=id))
 
     def __repr__(self):
         """Show info about itself instead of memory location."""
