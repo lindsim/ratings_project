@@ -1,17 +1,25 @@
 <DOCTYPE! html>
 <html>
-whatever
-<form action="/signup" method="POST">
-    do you wanna login???
-<input type="submit">
+<h1>Oh, Hello.</h1>
+
+<h4> Log in: </h4>
+<form action="/login" method="POST">
+    <label>Email:<input type="text" name="em" required></input></label><br />
+    <label>Password:<input type="text" name="pw" required></input></label><br />
+    <input type="submit" value="Log me in!">
 </form>
 
- {% for movie in movie_list %}
+<br></br>
+<h4> Or sign up: </h4>
 
- <h2>Movie {{ movie.id }}, Name {{ movie.name}}, Rating</h2>
+<form action="/signup" method="POST">
+            <label>Email:<input type="text" name="email" required></input></label><br />
+            <label>Password:<input type="text" name="password" required></input></label><br />
+            <label>Zipcode:<input type="text" name="zipcode" required></input></label><br />
+            <label>Age:<input type="number" name="age" required></input></label><br />
+    <input type="submit" value="Sign me up!">
 
-
-{% endfor %}
+</form>
 
 
 </html>

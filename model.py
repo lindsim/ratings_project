@@ -43,8 +43,8 @@ class Rating(Base):
     user_id = Column(Integer, ForeignKey('users.id'))
     rating = Column(Integer)
 
-    user = relationship("User", backref=backref ("ratings", order_by=id))
-    movie = relationship("Movie", backref=backref ("ratings", order_by=id))
+    user = relationship("User", backref="ratings", order_by=id)
+    movie = relationship("Movie", backref="ratings", order_by=id)
 
     def __repr__(self):
         """Show info about itself instead of memory location."""
